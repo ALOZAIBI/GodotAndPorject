@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cguok1h4qhk3"]
+
+[ext_resource type="Script" uid="uid://87ghenvb6n76" path="res://Scripts/CameraMovement.cs" id="1_noarx"]
+[ext_resource type="PackedScene" uid="uid://e86klrtxap51" path="res://MainUI.tscn" id="2_x4av3"]
+
+[node name="MainScene" type="Node3D"]
+
+[node name="CameraMovement" type="Node3D" parent="."]
+script = ExtResource("1_noarx")
+pivotPointPath = NodePath("PivotPoint")
+cameraPath = NodePath("Camera3D")
+rotationSpeed = 0.4
+
+[node name="Camera3D" type="Camera3D" parent="CameraMovement"]
+transform = Transform3D(1, 0, 0, 0, 0.994962, 0.100257, 0, -0.100257, 0.994962, 0, 0, 24.2336)
+
+[node name="PivotPoint" type="Node3D" parent="CameraMovement"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.20181, 0)
+light_color = Color(0.933564, 0.544005, 0.59493, 1)
+light_energy = 3.263
+omni_range = 13.704
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_x4av3")]

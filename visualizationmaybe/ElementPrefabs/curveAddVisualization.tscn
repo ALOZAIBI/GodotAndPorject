@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7avo6r8nk6p0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7u30i"]
+shading_mode = 0
+albedo_color = Color(0.415686, 0.627451, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bakom"]
+material = SubResource("StandardMaterial3D_7u30i")
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_bakom")

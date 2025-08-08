@@ -1,0 +1,293 @@
+[gd_scene load_steps=21 format=3 uid="uid://e86klrtxap51"]
+
+[ext_resource type="Theme" uid="uid://b8rjy8a2yy5mk" path="res://TopButtonsTheme.tres" id="1_3osgn"]
+[ext_resource type="Script" uid="uid://bykrbubq4vdjh" path="res://Scripts/ButtonScripts/ToggleMeshVisualization.cs" id="1_tg4cr"]
+[ext_resource type="Script" uid="uid://dtakv7udda5r8" path="res://Scripts/ButtonScripts/ToggleEdgeVisibility.cs" id="2_37rai"]
+[ext_resource type="Script" uid="uid://buiy87wvkt83p" path="res://Scripts/ButtonScripts/ToggleSurfaceVisibility.cs" id="3_0qrqu"]
+[ext_resource type="Script" uid="uid://d1llvcsqeidcn" path="res://Scripts/ButtonScripts/TogglePointVisibility.cs" id="3_37rai"]
+[ext_resource type="Script" uid="uid://cs7cmmnewe8yf" path="res://SelectionButtonColorer.cs" id="5_0fmn1"]
+[ext_resource type="Script" uid="uid://dq3q2qes536h1" path="res://SurfaceSelectionMode.cs" id="5_ijr42"]
+[ext_resource type="Script" uid="uid://dslxqknc6v504" path="res://Scripts/ButtonScripts/CurveSelectionMode.cs" id="5_w4oxd"]
+[ext_resource type="Script" uid="uid://cmf6qdf08um23" path="res://Scripts/ButtonScripts/PointSelectionMode.cs" id="6_fsbdh"]
+[ext_resource type="PackedScene" uid="uid://bipkpqnjdqdtq" path="res://addElement.tscn" id="7_aum4e"]
+[ext_resource type="Script" uid="uid://cdw3f5urwuwnv" path="res://UndoRedoGraphic.cs" id="9_8xjv5"]
+[ext_resource type="Texture2D" uid="uid://7f5qomlwk20a" path="res://Magix4D.png" id="12_3xc17"]
+[ext_resource type="Script" uid="uid://mtixnc1txg" path="res://JokePanel.cs" id="12_84m88"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qrqu"]
+bg_color = Color(0, 0, 0, 0.156863)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="InputEventKey" id="InputEventKey_8xjv5"]
+device = -1
+ctrl_pressed = true
+keycode = 90
+unicode = 122
+
+[sub_resource type="Shortcut" id="Shortcut_0fmn1"]
+events = [SubResource("InputEventKey_8xjv5")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_0fmn1"]
+device = -1
+shift_pressed = true
+ctrl_pressed = true
+keycode = 90
+unicode = 90
+
+[sub_resource type="Shortcut" id="Shortcut_3osgn"]
+events = [SubResource("InputEventKey_0fmn1")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3osgn"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_3xc17"]
+Panel/styles/panel = SubResource("StyleBoxFlat_3osgn")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="View" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.813
+anchor_right = 1.0
+anchor_bottom = 0.062
+offset_left = 0.42395
+offset_bottom = -0.176003
+theme_override_styles/panel = SubResource("StyleBoxFlat_0qrqu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="View"]
+layout_mode = 2
+anchor_left = 0.259
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.315
+offset_top = 3.0
+offset_right = -12.0
+offset_bottom = -3.25
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="Button" type="Button" parent="View/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3osgn")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+text = "M"
+clip_text = true
+script = ExtResource("1_tg4cr")
+
+[node name="Button2" type="Button" parent="View/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3osgn")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = "S"
+clip_text = true
+script = ExtResource("3_0qrqu")
+
+[node name="Button4" type="Button" parent="View/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3osgn")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = "C"
+clip_text = true
+script = ExtResource("2_37rai")
+
+[node name="Button3" type="Button" parent="View/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3osgn")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = "P"
+clip_text = true
+script = ExtResource("3_37rai")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="View"]
+layout_mode = 2
+anchor_right = 0.267
+anchor_bottom = 1.0
+offset_left = 6.52795
+offset_top = 3.0
+offset_right = 0.105957
+offset_bottom = -4.255
+text = "View"
+vertical_alignment = 1
+
+[node name="Selection" type="Panel" parent="." node_paths=PackedStringArray("surfaceButton", "curveButton", "pointButton")]
+anchors_preset = -1
+anchor_left = 0.613
+anchor_right = 0.805
+anchor_bottom = 0.062
+theme_override_styles/panel = SubResource("StyleBoxFlat_0qrqu")
+script = ExtResource("5_0fmn1")
+surfaceButton = NodePath("HBoxContainer/Button2")
+curveButton = NodePath("HBoxContainer/Button4")
+pointButton = NodePath("HBoxContainer/Button3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Selection"]
+layout_mode = 2
+anchor_left = 0.259
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.315
+offset_top = 3.0
+offset_right = -12.0
+offset_bottom = -3.25
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="Button" type="Button" parent="Selection/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3osgn")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+disabled = true
+text = "M"
+clip_text = true
+script = ExtResource("1_tg4cr")
+
+[node name="Button2" type="Button" parent="Selection/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3osgn")
+text = "S"
+clip_text = true
+script = ExtResource("5_ijr42")
+
+[node name="Button4" type="Button" parent="Selection/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3osgn")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+text = "C"
+clip_text = true
+script = ExtResource("5_w4oxd")
+
+[node name="Button3" type="Button" parent="Selection/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3osgn")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+text = "P"
+clip_text = true
+script = ExtResource("6_fsbdh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Selection"]
+layout_mode = 2
+anchor_right = 0.267
+anchor_bottom = 1.0
+offset_left = 6.52795
+offset_top = 3.0
+offset_right = 0.105957
+offset_bottom = -4.255
+text = "Select"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Add" parent="." instance=ExtResource("7_aum4e")]
+
+[node name="UndoStuff" type="Control" parent="." node_paths=PackedStringArray("undoButton", "redoButton", "vBoxContainer")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_8xjv5")
+undoButton = NodePath("Undo")
+redoButton = NodePath("Redo")
+vBoxContainer = NodePath("Panel/ScrollContainer/VBoxContainer")
+
+[node name="Undo" type="Button" parent="UndoStuff"]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+shortcut = SubResource("Shortcut_0fmn1")
+text = "<"
+
+[node name="Redo" type="Button" parent="UndoStuff"]
+layout_mode = 0
+offset_left = 47.0
+offset_right = 82.0
+offset_bottom = 35.0
+shortcut = SubResource("Shortcut_3osgn")
+text = ">"
+
+[node name="Panel" type="Panel" parent="UndoStuff"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 3.658
+anchor_bottom = 6.215
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UndoStuff/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UndoStuff/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_3xc17")
+script = ExtResource("12_84m88")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_3xc17")
+expand_mode = 1

@@ -1,0 +1,513 @@
+[gd_scene load_steps=18 format=3 uid="uid://bipkpqnjdqdtq"]
+
+[ext_resource type="Script" uid="uid://bykrbubq4vdjh" path="res://Scripts/ButtonScripts/ToggleMeshVisualization.cs" id="1_4oc7w"]
+[ext_resource type="Script" uid="uid://6w8kuvbqnjck" path="res://AddPointButton.cs" id="1_fuk2l"]
+[ext_resource type="Theme" uid="uid://b8rjy8a2yy5mk" path="res://TopButtonsTheme.tres" id="1_op2ng"]
+[ext_resource type="Script" uid="uid://ddgv6i0qp4ibv" path="res://AddSurfaceButton.cs" id="2_jxdto"]
+[ext_resource type="Script" uid="uid://dggw448uk6dbb" path="res://AddCurveButton.cs" id="3_ror3s"]
+[ext_resource type="Script" uid="uid://dxaptyyh6lgvw" path="res://AddPointEntry.cs" id="5_fuk2l"]
+[ext_resource type="Script" uid="uid://b7fhv2mwvyunu" path="res://AddFaceEntry.cs" id="6_jxdto"]
+[ext_resource type="Script" uid="uid://ca7l1ya2t01gx" path="res://AddCurveTabs.cs" id="6_qvpxq"]
+[ext_resource type="Script" uid="uid://ds4v84aikfleh" path="res://AddSegmentEntry.cs" id="6_ror3s"]
+[ext_resource type="Script" uid="uid://mcjvshl6na2w" path="res://AddArcEntry.cs" id="8_ql82q"]
+[ext_resource type="Script" uid="uid://cxf0ifnmsgvop" path="res://AddSplineEntry.cs" id="11_hq5km"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qrqu"]
+bg_color = Color(0, 0, 0, 0.156863)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4oc7w"]
+bg_color = Color(0.320457, 0.465035, 0.350805, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_fuk2l"]
+Button/styles/normal = SubResource("StyleBoxFlat_4oc7w")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ror3s"]
+bg_color = Color(0.77084, 0.770839, 0.770839, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvpxq"]
+bg_color = Color(0.868985, 0.868985, 0.868985, 1)
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="Theme" id="Theme_qvpxq"]
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+LineEdit/colors/font_placeholder_color = Color(0.310617, 0.310617, 0.310617, 0.6)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_ror3s")
+OptionButton/colors/font_color = Color(0.201527, 0.201527, 0.201526, 1)
+OptionButton/styles/normal = SubResource("StyleBoxFlat_qvpxq")
+
+[node name="Add" type="Panel"]
+anchors_preset = -1
+anchor_left = 0.414
+anchor_right = 0.607
+anchor_bottom = 0.062
+offset_top = 1.0
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0qrqu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+anchor_left = 0.259
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.315
+offset_top = 3.0
+offset_right = -12.0
+offset_bottom = -3.25
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_op2ng")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+disabled = true
+toggle_mode = true
+button_pressed = true
+text = "M"
+clip_text = true
+script = ExtResource("1_4oc7w")
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_op2ng")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = "S"
+clip_text = true
+script = ExtResource("2_jxdto")
+
+[node name="Button4" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_op2ng")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = "C"
+clip_text = true
+script = ExtResource("3_ror3s")
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_op2ng")
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.913725)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.913725, 0.384314)
+theme_override_colors/font_outline_color = Color(0.894118, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = "P"
+clip_text = true
+script = ExtResource("1_fuk2l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+anchor_right = 0.267
+anchor_bottom = 1.0
+offset_left = 6.52795
+offset_top = 3.0
+offset_right = 0.105957
+offset_bottom = -4.255
+text = "Add"
+fit_content = true
+vertical_alignment = 1
+
+[node name="AddPointPanel" type="Panel" parent="." node_paths=PackedStringArray("confirmAddPointButton", "xInput", "yInput", "zInput")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.996
+anchor_right = 1.0
+anchor_bottom = 4.357
+script = ExtResource("5_fuk2l")
+confirmAddPointButton = NodePath("Button")
+xInput = NodePath("VBoxContainer/X/LineEdit")
+yInput = NodePath("VBoxContainer/Y/LineEdit")
+zInput = NodePath("VBoxContainer/Z/LineEdit")
+
+[node name="Button" type="Button" parent="AddPointPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.792
+anchor_right = 0.956
+anchor_bottom = 0.973
+theme = SubResource("Theme_fuk2l")
+text = "ADD"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddPointPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.059
+anchor_right = 0.962
+anchor_bottom = 0.757
+
+[node name="X" type="Panel" parent="AddPointPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AddPointPanel/VBoxContainer/X"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.281
+anchor_bottom = 1.0
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="SpinBox" parent="AddPointPanel/VBoxContainer/X"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_right = 1.0
+anchor_bottom = 0.991
+scale = Vector2(1, 0.895)
+theme = SubResource("Theme_qvpxq")
+min_value = -1e+07
+max_value = 1e+08
+step = 0.1
+
+[node name="Y" type="Panel" parent="AddPointPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AddPointPanel/VBoxContainer/Y"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.281
+anchor_bottom = 1.0
+text = "Y"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="SpinBox" parent="AddPointPanel/VBoxContainer/Y"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_right = 1.0
+anchor_bottom = 0.991
+scale = Vector2(1, 0.895)
+theme = SubResource("Theme_qvpxq")
+min_value = -1e+07
+max_value = 1e+08
+step = 0.1
+
+[node name="Z" type="Panel" parent="AddPointPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AddPointPanel/VBoxContainer/Z"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.281
+anchor_bottom = 1.0
+text = "Z"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="SpinBox" parent="AddPointPanel/VBoxContainer/Z"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_right = 1.0
+anchor_bottom = 0.991
+scale = Vector2(1, 0.895)
+theme = SubResource("Theme_qvpxq")
+min_value = -1e+07
+max_value = 1e+08
+step = 0.1
+
+[node name="AddSurfacePanel" type="Panel" parent="." node_paths=PackedStringArray("confirmAddFaceButton")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.998
+anchor_bottom = 2.914
+offset_right = 0.108704
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("6_jxdto")
+confirmAddFaceButton = NodePath("Button")
+
+[node name="Button" type="Button" parent="AddSurfacePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.083
+anchor_right = 0.956
+anchor_bottom = 0.942
+theme = SubResource("Theme_fuk2l")
+text = "ADD"
+
+[node name="AddCurveTabs" type="Control" parent="." node_paths=PackedStringArray("segmentTabButton", "arcTabButton", "splineTabButton")]
+visible = false
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 4.345
+script = ExtResource("6_qvpxq")
+segmentTabButton = NodePath("SegButton")
+arcTabButton = NodePath("ArcButton")
+splineTabButton = NodePath("SplineButton")
+
+[node name="Segment" type="Panel" parent="AddCurveTabs" node_paths=PackedStringArray("confirmAddCurveButton", "firstPointInput", "secondPointInput")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ror3s")
+confirmAddCurveButton = NodePath("Button")
+firstPointInput = NodePath("VBoxContainer/X/Option")
+secondPointInput = NodePath("VBoxContainer/Y/Option")
+
+[node name="Button" type="Button" parent="AddCurveTabs/Segment"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.792
+anchor_right = 0.956
+anchor_bottom = 0.973
+theme = SubResource("Theme_fuk2l")
+text = "ADD"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddCurveTabs/Segment"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.059
+anchor_right = 0.962
+anchor_bottom = 0.757
+
+[node name="X" type="Panel" parent="AddCurveTabs/Segment/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AddCurveTabs/Segment/VBoxContainer/X"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.281
+anchor_bottom = 1.0
+text = "First"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Option" type="OptionButton" parent="AddCurveTabs/Segment/VBoxContainer/X"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_right = 1.0
+anchor_bottom = 0.991
+offset_bottom = 5.0
+scale = Vector2(1, 0.895)
+theme = SubResource("Theme_qvpxq")
+
+[node name="Y" type="Panel" parent="AddCurveTabs/Segment/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AddCurveTabs/Segment/VBoxContainer/Y"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.347
+anchor_bottom = 1.0
+offset_right = 0.864998
+grow_horizontal = 2
+grow_vertical = 2
+text = "Second"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Option" type="OptionButton" parent="AddCurveTabs/Segment/VBoxContainer/Y"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_right = 1.0
+anchor_bottom = 0.991
+offset_bottom = 5.0
+scale = Vector2(1, 0.895)
+theme = SubResource("Theme_qvpxq")
+
+[node name="ArcCircle" type="Panel" parent="AddCurveTabs" node_paths=PackedStringArray("confirmAddArcButton", "firstPointInput", "centerPointInput", "secondPointInput")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_ql82q")
+confirmAddArcButton = NodePath("Button")
+firstPointInput = NodePath("VBoxContainer/Start/Option")
+centerPointInput = NodePath("VBoxContainer/Center/Option")
+secondPointInput = NodePath("VBoxContainer/End/Option")
+
+[node name="Button" type="Button" parent="AddCurveTabs/ArcCircle"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.792
+anchor_right = 0.956
+anchor_bottom = 0.973
+theme = SubResource("Theme_fuk2l")
+text = "ADD"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddCurveTabs/ArcCircle"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.059
+anchor_right = 0.962
+anchor_bottom = 0.757
+
+[node name="Start" type="Panel" parent="AddCurveTabs/ArcCircle/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AddCurveTabs/ArcCircle/VBoxContainer/Start"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.443
+anchor_bottom = 1.0
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Option" type="OptionButton" parent="AddCurveTabs/ArcCircle/VBoxContainer/Start"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_right = 1.0
+anchor_bottom = 0.991
+offset_bottom = 5.0
+scale = Vector2(1, 0.895)
+theme = SubResource("Theme_qvpxq")
+
+[node name="Center" type="Panel" parent="AddCurveTabs/ArcCircle/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AddCurveTabs/ArcCircle/VBoxContainer/Center"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.443
+anchor_bottom = 1.0
+text = "Center"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Option" type="OptionButton" parent="AddCurveTabs/ArcCircle/VBoxContainer/Center"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_right = 1.0
+anchor_bottom = 0.991
+offset_bottom = 5.0
+scale = Vector2(1, 0.895)
+theme = SubResource("Theme_qvpxq")
+
+[node name="End" type="Panel" parent="AddCurveTabs/ArcCircle/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AddCurveTabs/ArcCircle/VBoxContainer/End"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.443
+anchor_bottom = 1.0
+text = "End"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Option" type="OptionButton" parent="AddCurveTabs/ArcCircle/VBoxContainer/End"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_right = 1.0
+anchor_bottom = 0.991
+offset_bottom = 5.0
+scale = Vector2(1, 0.895)
+theme = SubResource("Theme_qvpxq")
+
+[node name="AddSpline" type="Panel" parent="AddCurveTabs" node_paths=PackedStringArray("confirmAddSplineButton")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.335968
+offset_bottom = -62.3887
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_hq5km")
+confirmAddSplineButton = NodePath("Button")
+
+[node name="Button" type="Button" parent="AddCurveTabs/AddSpline"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.083
+anchor_right = 0.956
+anchor_bottom = 0.942
+theme = SubResource("Theme_fuk2l")
+text = "ADD"
+
+[node name="SegButton" type="Button" parent="AddCurveTabs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.145
+anchor_bottom = 0.252
+text = "Seg"
+
+[node name="ArcButton" type="Button" parent="AddCurveTabs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.252
+anchor_right = 1.145
+anchor_bottom = 0.504
+text = "Arc"
+
+[node name="SplineButton" type="Button" parent="AddCurveTabs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.504
+anchor_right = 1.152
+anchor_bottom = 0.758
+text = "Spl"

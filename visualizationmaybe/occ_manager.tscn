@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg83g787xsctr"]
+
+[ext_resource type="Script" uid="uid://con0getlo2bhd" path="res://Scripts/VisualizationManager.cs" id="1_fg3dp"]
+
+[node name="OCCManager" type="Node3D"]
+script = ExtResource("1_fg3dp")

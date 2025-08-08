@@ -1,0 +1,16 @@
+Import('env')
+
+env_occt = env.Clone()
+env_occt.add_source_files(env.modules_sources, "*.cpp") # Add all cpp files to the build
+
+env_occt.Append(CPPPATH = ["/usr/local/include/opencascade"])
+
+env.Append(LIBPATH = ["/usr/local/lib"])
+
+# Enable exception handling
+env_occt.Append(CCFLAGS=["-fexceptions"])
+
+env.Append(LIBS=[
+    "TKPrim", "TKBRep", "TKDESTEP", "TKXSBase", "TKTopAlgo", "TKernel","TKMath", "TKMesh","TKG3d","TKGeomBase",
+    "TKGeomAlgo"
+])

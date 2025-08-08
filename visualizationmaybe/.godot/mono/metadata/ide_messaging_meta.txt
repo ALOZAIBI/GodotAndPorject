@@ -1,0 +1,2 @@
+﻿38511
+/home/alozaibii/godot/bin/godot.linuxbsd.editor.dev.x86_64.mono

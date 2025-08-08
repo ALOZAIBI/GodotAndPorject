@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnfpegb21ulnt"]
+
+[ext_resource type="Script" uid="uid://bhsdsj5rg43h4" path="res://SelectionManager.cs" id="1_8ci1e"]
+[ext_resource type="PackedScene" uid="uid://cvyj8xhxp6833" path="res://debugRaycast.tscn" id="2_m5rlo"]
+
+[node name="SelectionManager" type="Node3D"]
+script = ExtResource("1_8ci1e")
+debugRayCast = ExtResource("2_m5rlo")

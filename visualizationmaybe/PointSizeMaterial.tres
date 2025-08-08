@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://boe2lo55eba7u"]
+
+[ext_resource type="Shader" uid="uid://r2b4ahadj5of" path="res://MeshElementPrefab/PointShader.gdshader" id="1_pughl"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pughl")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyej0evtb83b7"]
+
+[ext_resource type="Script" uid="uid://chxty3bmpuigl" path="res://Scripts/CreateMesh.cs" id="1_yvhtj"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_noarx"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_noarx")
+script = ExtResource("1_yvhtj")
